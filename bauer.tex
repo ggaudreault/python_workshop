@@ -1,0 +1,687 @@
+\documentclass[10pt, xcolor=dvisnames]{beamer}
+
+\usepackage{pgfpages}
+\usepackage{tikz}
+\usepackage{color}
+\usepackage[dvisnames]{xcolor}
+\usepackage{comment}
+\usepackage{verbatim}
+\usepackage{graphicx}
+
+\usepackage[absolute,overlay]{textpos}
+
+\setbeamersize{text margin left=40pt,text margin right=40pt} 
+
+%\newcommand{\topline}{
+  %\tikz[remember picture,overlay] {
+    %\draw[black] ([yshift=-1.2cm,xshift=30]current page.north west)
+    %\draw[black] ([yshift=-1.25cm,xshift=10]current page.north west)
+             %-- ([yshift=-1.25cm,xshift=\paperwidth-10]current page.north west);}}
+       %      -- ([yshift=-1.2cm,xshift=\paperwidth-30]current page.north west);
+       %\node[black, align=center] at (\paperwidth/2-20,0) {some text};
+      % }}
+      
+      
+      % \node at (current page.north east) [left,yshift=-0.15\textheight] {\bf cat}; 
+      
+%\addtobeamertemplate{frametitle}{}{\tikz[overlay, remember picture]{\draw[black] ([yshift=-1.05cm,xshift=30]current page.north west)  -- ([yshift=-1.05cm,xshift=\paperwidth-30]current page.north west);}}
+%\addtobeamertemplate{frametitle}{}{\tikz[overlay, remember picture]{\node ([yshift=-0.9cm,xshift=30]current page.north west) {\tiny Python Workshop};\draw[black] ([yshift=-0.9cm,xshift=30]current page.north west)  -- ([yshift=-0.9cm,xshift=\paperwidth-30]current page.north west);}}
+\addtobeamertemplate{frametitle}{}{\tikz[overlay, remember picture]{\draw[black] ([yshift=-0.9cm,xshift=30]current page.north west)  -- ([yshift=-0.9cm,xshift=\paperwidth-30]current page.north west);}}
+%\addtobeamertemplate{framtitle}{\vspace*{-20pt}}{\vspace*{-20pt}}
+
+
+
+%\everymath{\color{red}}
+\everydisplay{\color{red}}
+
+
+% Give a slight yellow tint to the notes page
+%\setbeamertemplate{note page}{\pagecolor{yellow!5}\insertnote}
+%\usepackage{palatino}
+
+\title{Python Workshop}
+\author{Gabriel Gaudreault\\ Concordia University}
+\date{\small \today}
+
+\begin{document}
+\maketitle
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Today}}
+\vspace*{-50pt}
+
+Hello\\
+\ \\
+
+\begin{itemize}
+\item Intro to Programming
+\item Syntax of Python
+\item Demos
+\item Particularities of the Language
+\item Extra Resources
+\end{itemize}
+
+
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Why Python?}}
+\vspace*{-50pt}
+
+\begin{itemize}
+\item Easy to Learn
+\item More Natural Syntax: no ``;", fewer ``\{", ``\}"
+\item No Pointers
+\item Recent
+\item Dynamically Typed
+\item Automatic Memory Management
+\item Lots of Libraries
+\item Multi-Paradigm: Imperative, Object-Oriented, Functional, Scripting, Web
+\item High-Level
+\item Big Community
+\end{itemize}
+
+
+\end{frame}
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Why Not Python?}}
+\vspace*{-50pt}
+
+See previous slide
+
+
+\end{frame}
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Python}}
+\vspace*{-50pt}
+
+{\small
+\begin{tabular}{lll}
+Interactive & Interpreted & Script\\
+\hline
+\texttt{Gabriel\$ python} & \texttt{Gabriel\$ vi code.py}& \texttt{Gabriel\$ vi code.py}\\
+\texttt{>>> fav\_number = 3} & \texttt{Gabriel\$ python code.py} & \texttt{chmod +x code.py}\\
+\texttt{>>> 2 + fav\_number} & & \texttt{Gabriel\$ ./code.py} \\
+\texttt{5}\\
+\texttt{>>>}\\
+\end{tabular}
+}
+
+\ \\
+For script mode, include \texttt{\#!/usr/bin/python} at top of the code
+
+\ \\
+``Main" function in Python : 
+
+\texttt{
+if \_\_name\_\_ == "\_\_main\_\_":\\
+\ \ \ \ \ \ starting\_function()
+}
+
+
+
+%\includegraphics[width=3cm]{interactive}
+%\includegraphics[width=6cm]{interpreted}
+%\includegraphics[width=3cm, trim =100 50 50 50]{script1}
+%\includegraphics[width=3cm]{script2}
+
+
+\end{frame}
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{First Program}}
+\vspace*{-50pt}
+
+Printing salutations
+
+\ \\
+\ \\
+\centerline{DEMO: HELLO + INTERACTIVE}
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Standard Data Types}}
+\vspace*{-50pt}
+
+\begin{itemize}
+\item *Boolean
+\item Numbers (integers, float, long, complex)
+\item Strings
+\item List
+\item Tuple
+\item Dictionary
+\end{itemize}
+
+
+\end{frame}
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Variables}}
+\vspace*{-50pt}
+
+Unlike other languages, Python is dynamically typed, which means that in a lot of cases types do not have to be explicitly stated, for example in variable instantiation or when defining a function\\
+
+\ \\
+\ \\
+\centerline{DEMO VARIABLES}
+
+
+\end{frame}
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Numbers}}
+\vspace*{-50pt}
+
+Basic math operators in Python:
+\[+\ -\ /\ *\ \%\ \setminus \ <\ >\ <=\ >=\ //\ abs\ **\]
+
+\ \\
+Different types:
+\begin{center}
+\item Integers
+\item Long
+\item Float
+\item Complex
+\end{center}
+
+\ \\
+\centerline{INTERACTIVE DEMO}
+
+\end{frame}
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Truth}}
+\vspace*{-50pt}
+
+Special keywords: True, False
+
+\ \\
+Most types can be evaluated to a truth value...\\
+True: any non-zero integer, characters, non-null strings, non-empty lists, non-empty dictionaries, ...\\
+False: 0, [], ``", {},...
+
+\ \\
+Logic Operators:
+\[ or\ and\ not\ !=\ ==\ <=\ >=\]
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Truth}}
+\vspace*{-50pt}
+
+
+BE CAREFUL:\\
+\begin{center}
+\texttt{True and 1\\
+True == 'a'\\
+True = 43\\
+True == 1\\
+True and "elephant"}\end{center}
+
+\ \\
+\centerline{DEMO}
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Characters and Strings}}
+\vspace*{-50pt}
+
+
+\begin{itemize}
+\item Characters are enclosed within single quotes, e.g. 'a'
+\item Strings use double quotes, e.g. "hola"
+\item Combine strings with "+", e.g. "Super" + "man" = "Superman"
+\item Access single characters using index, e.g. cat[2] = "t"
+\end{itemize}
+
+
+
+\ \\
+\ \\
+{\small Note: Just as in most things in computer science, indexing starts at 0 not 1!}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Characters and Strings}}
+\vspace*{-50pt}
+
+Useful functions on strings:\\
+
+\centerline{$append, +, *, [i], [i:j]$}
+
+\ \\
+\ \\
+\centerline{INTERACTIVE DEMO}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Back to Print}}
+\vspace*{-50pt}
+
+
+\begin{itemize}
+\item Add ``," at end of print statement to keep cursor on same line
+\item Can combine values using ``,", ``+", or inline format characters
+\item Special characters: $\setminus n, \setminus\ ", \setminus\setminus, \setminus t, \setminus *$
+\end{itemize}
+
+
+\ \\
+\ \\
+\centerline{INTERACTIVE DEMO}
+
+
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Input}}
+\vspace*{-50pt}
+
+\begin{itemize}
+\item Get input from console using \texttt{raw\_input("text")}
+\item The argument for the function gets printed out and the output is whatever gets written by the user
+\end{itemize}
+
+
+
+
+\ \\
+\ \\
+\centerline{DEMO}
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Lists}}
+\vspace*{-50pt}
+
+\begin{itemize}
+\item Python also supports Lists, e.g. $ ["a", "b"], [[[1],2],3], ["Edward", "Paul", "Suzie", "Not Nicole"]$
+\item Lists are mutable
+\item Unlike other languages, Python lists are ``untyped"
+\item Useful operations on strings: pop,del, len, in, append, index, insert, remove(obj), reverse, sort
+\end{itemize}
+
+
+
+
+\ \\
+\ \\
+\centerline{INTERACTIVE DEMO}
+
+\end{frame}
+
+
+
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Dictionaries}}
+\vspace*{-50pt}
+
+\begin{itemize}
+\item Python also supports Dictionaries by default, e.g. $me = {"name":"gabriel", "hands": "2", "t-shirt":"blue"} $
+\item Dictionaries are also mutable
+\item Access values through keys, e.g. $me["name"] = "gabriel"$
+\item Useful operations: del, clear(), len(), has\_key(), items(), keys(), values(), update()
+\end{itemize}
+
+
+\ \\
+\ \\
+\centerline{INTERACTIVE DEMO}
+
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Tuples}}
+\vspace*{-50pt}
+
+\begin{itemize}
+\item Tuples $(a1,...,an)$ are also supported in Python
+\item Tuples are IMMUTABLE
+\item You can still access the data, just not modify it
+\end{itemize}
+
+
+\ \\
+\ \\
+\centerline{INTERACTIVE DEMO}
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Functions}}
+\vspace*{-50pt}
+
+\begin{center}\texttt{def my\_function(inputs):\\
+\ \ \ \ ....\\
+\ \ \ \ $do\ stuff$\\
+\ \ \ \ .... \\
+\ \ \ \ return output
+}\end{center}
+
+\begin{itemize}
+\item Functions are blocks of code with input and output
+\item They are reusable structures
+\item Functions are not run when encountered, have to be called
+\item Functions have to already have been seen by the interpreter before being called
+\end{itemize}
+
+
+\ \\
+\ \\
+\centerline{DEMO}
+%{\tiny first/second\_function.py}
+
+\ \\
+Note: In Python, tabs/spaces are super important to structure the code, as opposed to \{...\} or ``;" in other languages
+
+\end{frame}
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Back to Types}}
+\vspace*{-50pt}
+
+Not having explicit types can be fun and make code less heavy to read, but can be problematic as code \\
+
+
+
+\ \\
+\ \\
+\centerline{INTERACTIVE DEMO}
+
+
+\end{frame}
+
+
+
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Memory}}
+\vspace*{-50pt}
+
+Some types in Python are more basic than others:\\
+- Strings $\equiv$ Lists of characters\\
+- Characters and Numbers passed by value instead of by Reference\\
+- Dictionaries, Strings, Lists built recursively on other types\\
+
+
+
+\ \\
+\ \\
+\centerline{INTERACTIVE DEMO}
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Files}}
+\vspace*{-50pt}
+
+\begin{itemize}
+\item Open files with \texttt{variable = open(filename, flag)}
+\item Read the files with: read(), readlines()
+\item Write with \texttt{write()}
+\item Close file with \texttt{close()} 
+\end{itemize}
+
+
+\ \\
+\ \\
+\centerline{INTERACTIVE DEMO}
+
+
+\end{frame}
+
+
+
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Conditionals}}
+\vspace*{-50pt}
+\begin{center}
+\texttt{
+if CONDITION:\\
+\ \ \ \ $do\ stuff$\\
+elif CONDITION:\\
+\ \ \ \ $do\ stuff$\\
+else:\\
+\ \ \ \ $do\ stuff$\\}\end{center}
+
+\begin{itemize}
+\item Only \texttt{if} is obligatory
+\item Interpreter tests a branch then either runs the inside code or skips to new branch
+\end{itemize}
+
+
+\ \\
+\ \\
+\centerline{INTERACTIVE DEMO}
+WRITE IFF ESLSJFIE ELIF ILS CODE
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Loops}}
+\vspace*{-50pt}
+
+2 different kinds of loops in Python
+\begin{itemize}
+\item $For$ loops: Runs what is in the body once for each value in A\\
+\texttt{for i in A:\\
+\ \ \ \ $do\ stuff$\\}
+\item $While$ loops: Runs what is in the body as long as the condition is true\\
+\texttt{while CONDITION:\\
+\ \ \ \ $do\ stuff$\\}
+\end{itemize}
+
+Use \texttt{break} to force exit from the loop
+
+
+\ \\
+\ \\
+\centerline{INTERACTIVE DEMO}
+
+\end{frame}
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Regular Expressions}}
+\vspace*{-50pt}
+
+Super useful when dealing with text and words\\
+
+Useful functions:
+\begin{itemize}
+\item \texttt{re.match(pattern, text, flags)}: searches the text for the pattern from the beginning of the text
+\item \texttt{re.search(pattern, text, flags)}: searches the text for the pattern, anywhere in the text
+\item \texttt{re.sub(pattern\_to\_match, pattern\_to\_sub, text)}: replace the first pattern by the second
+\end{itemize}
+
+The pattern in these cases has to be either of the form \texttt{r'pattern'} or you can use the \text{compile} function to turn a string into a pattern.
+
+
+\ \\
+\ \\
+\centerline{TREE DEMO}
+
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Lambda}}
+\vspace*{-50pt}
+
+Python also supports anonymous functions of the style $\lambda x. f(x)$ written as \texttt{lambda x: f(x)}
+
+
+
+
+
+
+\ \\
+\ \\
+\centerline{SEMANTICS DEMO}
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\ \centerline{Resources}}
+\vspace*{-50pt}
+
+http://learnpythonthehardway.org/book/\\
+https://web.stanford.edu/class/linguist278/\\
+http://www.tutorialspoint.com/python/\\
+https://docs.python.org/2/tutorial/
+
+
+
+\end{frame}
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+\begin{frame}{{\tiny \ \\\vspace{-13pt} \ \ \ \ \ \ \ \ \ \ \ Python Workshop}\\\vspace{3pt} \centerline{Cat}}
+\vspace*{-50pt}
+%\topline
+%\frametitle{\ \\ \[Hepa\]}
+%\frametitle{\[Hepa\]}
+%\frametitle{\begin{center}Hepa\end{center}}
+%\begin{center}{\color{blue} \Large Hepa}\end{center}
+%\begin{center}{\color{cyan} \Large Hepa}\end{center}
+%\begin{textblock}{5}(7,1) Test\end{textblock}
+
+
+non 
+
+ne me
+
+\textcolor{blue}{cat}
+
+%{\color{RoyalBlue} cat}
+
+dis
+
+pas $what$ no non o no $kokokokokok$
+
+what if
+
+yeah 
+
+why is the text so weird it's so far on the side
+
+yeah 
+
+she got you
+
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

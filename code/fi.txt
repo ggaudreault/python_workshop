@@ -1,0 +1,5 @@
+fn = open("first.py", 'r')
+
+file_open = fn.read()
+
+print file_open
